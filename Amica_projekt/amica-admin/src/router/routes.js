@@ -4,15 +4,8 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('components/FoodStatusBasic.vue') },
-      { path: '', component: () => import('components/Likes.vue') }
-    ]
-  },
-  {
-    path: '/statuspage',
-    component: () => import('layouts/StatusPage.vue'),
-    children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '/overview', component: () => import('pages/FoodStatusBasic.vue') },
+      { path: '/status', component: () => import('pages/StatusPage.vue') }
     ]
   },
   // Always leave this as last one,
