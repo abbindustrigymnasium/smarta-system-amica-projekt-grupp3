@@ -13,8 +13,11 @@
     "@quasar/extras": "^1.0.0",
     "apexcharts": "^3.20.2",
     "core-js": "^3.6.5",
+    "firebase": "^7.22.0",
     "quasar": "^1.0.0",
-    "vue-apexcharts": "^1.6.0"
+    "vue-apexcharts": "^1.6.0",
+    "vuefire": "^2.2.4",
+    "vuexfire": "^3.2.4"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",

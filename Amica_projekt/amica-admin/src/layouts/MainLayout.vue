@@ -8,7 +8,7 @@
           </q-avatar>
           Food & Co.
           </q-toolbar-title>
-        <q-btn flat style="color: #0c2461;" label="overview" class="q-ma-sm" to="/overview"/>
+        <q-btn flat style="color: #0c2461;" label="overview" class="q-ma-sm" to="/"/>
         <q-btn flat style="color: #0c2461" label="status" to="/status"/>
       </q-toolbar>
     </q-header>
