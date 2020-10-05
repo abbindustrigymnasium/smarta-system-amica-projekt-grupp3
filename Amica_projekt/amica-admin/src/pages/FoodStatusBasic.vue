@@ -96,6 +96,10 @@ export default {
         data: [40, 45, 51, 49]
       }]
     }
+  },
+  mounted () {
+    console.log("MOUNTED");
+    
   }
 }
 </script>
