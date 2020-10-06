@@ -1,8 +1,7 @@
 <template>
-  <q-page>
-      <q-input type="text" v-model="text" label="Username" />
-      <q-input type="password" v-model="text" label="Password" />
-  </q-page>
+  <q-layout view="lHh Lpr lFf" class="flex flex-center">
+    <h1>Login</h1>
+  </q-layout>
 </template>
 
 <script>
