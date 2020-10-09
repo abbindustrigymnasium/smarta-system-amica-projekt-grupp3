@@ -73,8 +73,7 @@ export default {
     }
   },
   firestore: {
-    foodData: db.collection('foodData'),
-    series1: db.collection('foodData')
+    foodData: db.collection('foodData')
   }
 }
 </script>
