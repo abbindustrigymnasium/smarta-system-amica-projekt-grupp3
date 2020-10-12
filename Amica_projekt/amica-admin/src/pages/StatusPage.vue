@@ -204,12 +204,14 @@
       <div class="row justify-center">
         <q-btn-toggle
           v-model="slide"
+          toggle-color="primary"
+          unelevated
           :options="[
-            { label: 1, value: '1' },
-            { label: 2, value: '2' },
-            { label: 3, value: '3' },
-            { label: 4, value: '4' },
-            { label: 5, value: '5' }
+            { label: 'Dag 1', value: '1' },
+            { label: 'Dag 2', value: '2' },
+            { label: 'Dag 3', value: '3' },
+            { label: 'Dag 4', value: '4' },
+            { label: 'Dag 5', value: '5' }
           ]"
         />
       </div>
@@ -218,13 +220,18 @@
 </template>
 
 <script>
+import { db } from '../boot/firebase'
 
 export default {
   name: 'Statuspage',
   data () {
     return {
-      slide: 1
+      slide: '1',
+      foodData: []
     }
+  },
+  firestore: {
+    foodData: db.collection('foodData')
   }
 }
 </script>

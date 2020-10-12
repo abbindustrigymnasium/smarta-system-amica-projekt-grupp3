@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { vuexfireMutations } from 'vuexfire'
 
 Vue.use(Vuex)
+
+import user from './user'
+import auth from './auth'
 
 /*
  * If not building with SSR mode, you can
@@ -14,11 +18,13 @@ Vue.use(Vuex)
 
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
-    state: {
-    },
     modules: {
+      user,
+      auth
     },
-
+    mutations: {
+      ...vuexfireMutations
+    },
     // enable strict mode (adds overhead!)
     // for dev mode only
     strict: process.env.DEV

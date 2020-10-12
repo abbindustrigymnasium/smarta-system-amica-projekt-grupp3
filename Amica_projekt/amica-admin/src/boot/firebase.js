@@ -1,10 +1,11 @@
 import { firestorePlugin } from 'vuefire'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import firebaseService from '../services/firebase'
 
 let db
 
-export default ({ Vue }) => {
+export default ({ Vue, store }) => {
   Vue.use(firestorePlugin)
 
   const firebaseConfig = {
@@ -18,6 +19,18 @@ export default ({ Vue }) => {
   }
 
   firebase.initializeApp(firebaseConfig)
+
+  // Tell the application what to do when the
+  // authentication state has changed
+  firebaseService.auth().onAuthStateChanged((user) => {
+    firebaseService.handleOnAuthStateChanged(store, user)
+  }, (error) => {
+    console.error(error)
+  })
+
+  Vue.prototype.$fb = firebaseService
+  store.$fb = firebaseService
+
   db = firebase.firestore()
 }
 
