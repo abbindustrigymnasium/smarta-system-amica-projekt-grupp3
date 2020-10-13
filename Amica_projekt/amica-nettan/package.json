@@ -2,7 +2,7 @@
   "name": "amica-app",
   "version": "0.0.1",
   "description": "nej",
-  "productName": "Magneten kassör-app",
+  "productName": "com.grupp3.abb.app",
   "author": "davidmorck <david.morck@abbindustrigymnasium.se>",
   "private": true,
   "scripts": {
