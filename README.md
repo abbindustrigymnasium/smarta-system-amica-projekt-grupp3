@@ -13,5 +13,6 @@ Nedan finns några bilder som visar hur applikationen ser ut.
 #### Kundapplikationen
 
 #### Kassaapplikationen
+[Contribution guidelines for this project](KassaApp.png)
 
 
