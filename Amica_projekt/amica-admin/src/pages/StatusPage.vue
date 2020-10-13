@@ -221,6 +221,7 @@
 
 <script>
 import { db } from '../boot/firebase'
+import { date } from 'quasar'
 
 export default {
   name: 'Statuspage',
@@ -231,7 +232,7 @@ export default {
     }
   },
   firestore: {
-    foodData: db.collection('foodData')
+    foodData: db.collection('weekData')
   }
 }
 </script>
