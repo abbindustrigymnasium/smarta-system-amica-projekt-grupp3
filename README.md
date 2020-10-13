@@ -13,6 +13,6 @@ Nedan finns några bilder som visar hur applikationen ser ut.
 #### Kundapplikationen
 
 #### Kassaapplikationen
-[Contribution guidelines for this project](KassaApp.png)
+![Här är applikationen för de som står i kassan.](https://github.com/abbindustrigymnasium/smarta-system-amica-projekt-grupp3/blob/master/KassaApp.png)
 
 
