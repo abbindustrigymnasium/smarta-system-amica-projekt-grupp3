@@ -7,4 +7,7 @@ Projektet går ut på att tillhandahålla en applikation där Amica Lugna Gatans
 ## Syfte
 Syftet med vår lösning är att underlätta för både restaurang och kunder. Genom att kunder sätter betyg på den mat de valt att äta så kan restaurangen justera sitt utbud efter vilka rätter som generellt är mest populära. Samtidigt som de vet hur många som äter varje rätt. På så sätt kan de anpassa sitt utbud efter både vilka rätter som är mest populära och efter hur många som äter dessa rätter. Det gynnar både restaurang och kund, restaurangen kan maximera sin vinst samtidigt som kunden får de rätter som den gillar mest. Något som på sikt ökar antalet kunder som besöker lunchrestaurangen. 
 
+## Hur ser applikationen ut?
+Nedan finns några bilder som visar hur applikationen ser ut. 
+
 
