@@ -10,4 +10,8 @@ Syftet med vår lösning är att underlätta för både restaurang och kunder. G
 ## Hur ser applikationen ut?
 Nedan finns några bilder som visar hur applikationen ser ut. 
 
+#### Kundapplikationen
+
+#### Kassaapplikationen
+
 
