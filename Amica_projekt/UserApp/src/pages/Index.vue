@@ -5,7 +5,7 @@
     </div>
 
       <div class="q-pa-md row">
-        <q-slide-item v-for="(item, index) in todaysFood" :key="index" @top="onTop(item, index, ...arguments)" @bottom="onBottom(item, index, ...arguments)" top-color="red" bottom-color="green" class="col bg-grey-3 q-mx-sm" style="border-radius: 20px;">
+        <q-slide-item v-for="(item, index) in todaysFood" :key="index" @top="onTop(item, index, ...arguments)" @bottom="onBottom(item, index, ...arguments)" top-color="red" bottom-color="green" class="col bg-grey-3 q-mx-sm" style="border-radius: 25px;">
             <template v-slot:top>
               <q-icon name="thumb_down" class="q-mt-sm" style="font-size: 2rem"/>
             </template>
@@ -46,9 +46,9 @@ export default {
   methods: {
     onTop (item, index, { reset }) { // On dislike
       this.finalize(reset) // Resets the slide-item
-      const ref = this
+      const ref = this // Needed to access data in .then(function ())
       const name = this.names[index]
-      db.collection('testing').doc(this.names[index]).update('dislikes', item.dislikes + 1)
+      db.collection('testing').doc(this.names[index]).update('dislikes', increment)
         .then(function () {
           console.log('Updated todays data!')
           db.collection('weektest').doc(ref.todaysdate).update(`foodData.${name}.dislikes`, increment)
@@ -68,7 +68,7 @@ export default {
       this.finalize(reset)
       const ref = this
       const name = this.names[index]
-      db.collection('testing').doc(this.names[index]).update('likes', item.likes + 1)
+      db.collection('testing').doc(this.names[index]).update('likes', increment)
         .then(function () {
           console.log('Updated todays data!')
           db.collection('weektest').doc(ref.todaysdate).update(`foodData.${name}.likes`, increment)
@@ -85,7 +85,7 @@ export default {
     },
 
     sendComment (msg) {
-      this.text = ''
+      this.text = '' // Clears the input field
       db.collection('comments').add({ date: this.todaysdate, message: msg })
         .then(function () {
           console.log('Comment sent!')
@@ -130,10 +130,9 @@ export default {
   firestore: {
     todaysFood: db.collection('testing')
   },
-  mounted () {
-    const date = this.getDate()
+  created () {
+    const date = this.getDate() // Todays date
     console.log(date)
-    // const date = '2020-10-08'
     this.todaysdate = date
 
     axios.get('https://cors-anywhere.herokuapp.com/' + 'https://foodandco.se/api/restaurant/menu/day?date=' + date + '&language=sv&restaurantPageId=188244')
@@ -145,9 +144,7 @@ export default {
         }
         console.log(this.dishes)
 
-        db.collection('testing')
-          .doc('food1')
-          .get()
+        db.collection('testing').doc('food1').get() // Date is the same in for all docs
           .then(snapshot => {
             const todaysdate = snapshot.data().date
             if (todaysdate !== date) { // Only set new values if data already in firebase is outdated, to prevent overwriting
@@ -169,13 +166,13 @@ export default {
           .then(querySnapshot => {
             const alldata = querySnapshot.docs.map(doc => doc.data())
             const latestdata = alldata[alldata.length - 1]
-            const fooddata = {
-              food1: { food: this.dishes[0], quantity: 0, dislikes: 0, likes: 0 },
-              food2: { food: this.dishes[1], quantity: 0, dislikes: 0, likes: 0 },
-              food3: { food: this.dishes[2], quantity: 0, dislikes: 0, likes: 0 },
-              food4: { food: this.dishes[3], quantity: 0, dislikes: 0, likes: 0 }
-            }
             if (latestdata.date !== date) { // Makes sure we do not overwrite data
+              const fooddata = {
+                food1: { food: this.dishes[0], quantity: 0, dislikes: 0, likes: 0 },
+                food2: { food: this.dishes[1], quantity: 0, dislikes: 0, likes: 0 },
+                food3: { food: this.dishes[2], quantity: 0, dislikes: 0, likes: 0 },
+                food4: { food: this.dishes[3], quantity: 0, dislikes: 0, likes: 0 }
+              }
               db.collection('weektest').doc(date).set({ date: date, foodData: fooddata })
                 .then(function () {
                   console.log('Set new weekdata for today!')
@@ -183,10 +180,6 @@ export default {
                 .catch(function (error) {
                   console.log('Error: ', error)
                 })
-              // for (const i of this.names) {
-              //   this.currentfood = i
-              //   console.log(i)
-              //   db.collection('weektest').doc(date).update('foodData', { : { food: i, quantity: 0, dislikes: 0, likes: 0 } })
             } else {
               console.log('Already inserted weekdata for today')
             }
