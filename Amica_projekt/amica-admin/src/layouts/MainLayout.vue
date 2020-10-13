@@ -10,7 +10,7 @@
           </q-toolbar-title>
         <q-btn flat style="color: #0c2461;" label="overview" class="q-ma-sm" to="/"/>
         <q-btn flat style="color: #0c2461" label="status" to="/status"/>
-        <q-btn label="Log out" unelevated color="red" class="q-ma-sm" @click="confirm = true" />
+        <q-btn outline label="Log out" color="red" class="q-ma-sm" @click="confirm = true" />
       </q-toolbar>
     </q-header>
 
@@ -26,7 +26,7 @@
           </q-avatar>
           <span class="q-ml-sm" style="font-size: 20px">Are you sure you want to log out?</span>
         </q-card-section>
-        <q-card-actions align="center">
+        <q-card-actions class="q-mb-md" align="center">
           <q-btn flat label="Cancel" color="primary" v-close-popup />
           <q-btn flat label="Log out" color="red" v-close-popup @click="logoutUser"/>
         </q-card-actions>

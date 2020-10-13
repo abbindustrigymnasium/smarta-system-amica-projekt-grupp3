@@ -1,5 +1,6 @@
 <template>
   <q-page class="column flex-center">
+    <h3 class="q-ma-sm">Weekly Stats</h3>
     <div class="q-pa-md">
       <q-carousel
         v-model="slide"
