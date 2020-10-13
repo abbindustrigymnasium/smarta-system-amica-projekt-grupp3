@@ -10,14 +10,15 @@ Syftet med vår lösning är att underlätta för både restaurang och kunder. G
 ## Hur ser applikationen ut?
 Nedan finns några bilder som visar hur applikationen ser ut. 
 
-#### Kundapplikationen
+### Kundapplikationen
 Nedan finns tre bilder som visar hur applikationen ser ut för de som betygsätter maten för dagen. 
 ![Här är applikationen för kunderna](https://github.com/abbindustrigymnasium/smarta-system-amica-projekt-grupp3/blob/master/LoginPage.JPG)
 ![Här är applikationen för kunderna](https://github.com/abbindustrigymnasium/smarta-system-amica-projekt-grupp3/blob/master/Overview.JPG)
 ![Här är applikationen för kunderna](https://github.com/abbindustrigymnasium/smarta-system-amica-projekt-grupp3/blob/master/StatusPage.JPG)
 
 
-#### Kassaapplikationen
+### Kassaapplikationen
+Här finns en bild som visar hur applikationen ser ut för den som står i kassan och registrerar vilka rätter kunderna väljer. 
 ![Här är applikationen för de som står i kassan.](https://github.com/abbindustrigymnasium/smarta-system-amica-projekt-grupp3/blob/master/KassaApp.png)
 
 
