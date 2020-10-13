@@ -131,9 +131,8 @@ export default {
     todaysFood: db.collection('testing')
   },
   created () {
-    // const date = this.getDate()
-    // console.log(date)
-    const date = '2020-10-07'
+    const date = this.getDate() // Todays date
+    console.log(date)
     this.todaysdate = date
 
     axios.get('https://cors-anywhere.herokuapp.com/' + 'https://foodandco.se/api/restaurant/menu/day?date=' + date + '&language=sv&restaurantPageId=188244')
