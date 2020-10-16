@@ -12,7 +12,7 @@ Nedan finns några bilder som visar hur applikationen ser ut.
 
 ### Kundapplikationen
 Nedan syns en bild som visar hur applikationen ser ut för de som betygsätter maten för dagen. 
-![Här är applikationen för kunderna](https://github.com/abbindustrigymnasium/smarta-system-amica-projekt-grupp3/blob/master/UserApp.JPG)
+![Här är applikationen för kunderna](https://github.com/abbindustrigymnasium/smarta-system-amica-projekt-grupp3/blob/master/UserApp.PNG)
 
 ### Statistikapplikationen
 Nedan finns tre bilder som visar hur statistiksidan ser ut, där man kan se vilka omdömen restaurangen har fått.
