@@ -2,7 +2,7 @@
   "name": "qtest",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "productName": "Amica User App",
   "author": "mememaster69",
   "private": true,
   "scripts": {
