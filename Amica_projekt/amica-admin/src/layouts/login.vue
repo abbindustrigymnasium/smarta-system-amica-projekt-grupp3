@@ -36,7 +36,7 @@ export default {
     login() {
       this.loading = true
       let user = { email: this.username, password: this.password }
-      console.log(user)
+      // console.log(user)
       this.loginUser(user)
         .then(u => {
           this.$router.push('/')

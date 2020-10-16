@@ -10,6 +10,7 @@
           </q-toolbar-title>
         <q-btn flat style="color: #0c2461;" label="overview" class="q-ma-sm" to="/"/>
         <q-btn flat style="color: #0c2461" label="status" to="/status"/>
+        <q-btn flat style="color: #0c2461" label="nettan" to="/nettan"/>
         <q-btn outline label="Log out" color="red" class="q-ma-sm" @click="confirm = true" />
       </q-toolbar>
     </q-header>
