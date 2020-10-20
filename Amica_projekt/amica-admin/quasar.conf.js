@@ -115,8 +115,8 @@ module.exports = function (/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Amica Admin',
-        short_name: 'Amica Admin',
+        name: 'Fazer Admin',
+        short_name: 'Fazer Admin',
         description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',

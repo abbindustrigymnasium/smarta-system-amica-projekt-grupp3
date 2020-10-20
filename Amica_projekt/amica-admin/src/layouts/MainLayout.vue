@@ -8,13 +8,17 @@
           </q-avatar>
           Food & Co.
           </q-toolbar-title>
-        <q-btn flat style="color: #0c2461;" label="overview" class="q-ma-sm" to="/"/>
-        <q-btn flat style="color: #0c2461" label="status" to="/status"/>
-        <q-btn flat style="color: #0c2461" label="nettan" to="/nettan"/>
-        <q-btn outline label="Log out" color="red" class="q-ma-sm" @click="confirm = true" />
+          <div v-if="cap > 500">
+            <q-btn flat style="color: #0c2461;" label="overview" class="q-ma-sm" to="/"/>
+            <q-btn flat style="color: #0c2461" label="status" to="/status"/>
+            <q-btn flat style="color: #0c2461" label="nettan" to="/nettan"/>
+            <q-btn outline label="Log out" color="red" class="q-ma-sm" @click="confirm = true" />
+          </div>
+          <div v-else>
+            <q-btn round flat color="red" icon="logout" @click="confirm = true"/>
+          </div>
       </q-toolbar>
     </q-header>
-
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -33,18 +37,25 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
+    <q-page-sticky v-if="cap < 500" position="bottom" class="justify-around" style="box-shadow: #000 0 10px 20px; background: #0c2461">
+        <q-btn flat color="white" label="overview" class="q-ma-sm" to="/"/>
+        <q-btn flat color="white" label="status" class="q-ma-sm" to="/status" />
+        <q-btn flat color="white" label="nettan"  class="q-ma-sm" to="/nettan" />
+    </q-page-sticky>
   </q-layout>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-
 export default {
   name: 'MainLayout',
   data () {
     return {
-      confirm: false
+      show: false,
+      confirm: false,
+      cap: screen.width,
+      user: []
     }
   },
   computed: {
@@ -54,7 +65,7 @@ export default {
     ...mapActions('auth', ['logoutUser']),
     logOut() {
       this.logoutUser()
-    }
+    },
   }
 }
 </script>

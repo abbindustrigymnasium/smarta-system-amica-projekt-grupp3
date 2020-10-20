@@ -1,7 +1,7 @@
 <template>
   <q-page class="column flex-center">
     <h3 class="q-ma-sm" style="font-weight: 800;">Weekly Stats</h3>
-    <div class="q-pa-md" style="width: 100%;">
+    <div class="q-pa-none" style="width: 100%;">
       <q-carousel
         v-model="slide"
         transition-prev="slide-right"
@@ -11,7 +11,7 @@
         class="rounded-borders"
       >
         <q-carousel-slide v-for="(day, i) in slicedData" :key="i" :name="i" class="column no-wrap flex-center" style="width: 100%">
-          <q-markup-table class="bg-accent text-white" style="width: 80%">
+          <q-markup-table class="bg-accent text-white" style="width: 100%">
             <thead>
               <tr>
                 <th class="text-left">Rätter</th>
