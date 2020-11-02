@@ -137,7 +137,7 @@ export default {
 
     axios.get('https://cors-anywhere.herokuapp.com/' + 'https://foodandco.se/api/restaurant/menu/day?date=' + date + '&language=sv&restaurantPageId=188244')
       .then(response => {
-        const lunchRawString = response.data.LunchMenu.Html.toLowerCase().split('&auml;').join('ä').split('&ouml;').join('ö').split('&aring;').join('å').split('<p>').join('').split('</p>').join('').split('&eacute;').join('é').split('<br />').join('')
+        const lunchRawString = response.data.LunchMenu.Html.toLowerCase().split('&auml;').join('ä').split('&ouml;').join('ö').split('&aring;').join('å').split('<p>').join('').split('</p>').join('').split('&eacute;').join('é').split('<br />').join('').split('&egrave;').join('é')
         const lunchList = lunchRawString.split('\n')
         for (var i = 0; i < lunchList.length; i++) {
           this.dishes.push(lunchList[i][0].toUpperCase() + lunchList[i].substring(1))
